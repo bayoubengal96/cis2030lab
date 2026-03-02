@@ -30,75 +30,57 @@
       clear credit to the original creator.
     </p>
 
-    <!-- SIMPLE GALLERY  -->
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 14px;">
-
+    <section class="gallery">
       <!-- ITEM 1: MY FAN POSTER -->
-      <figure style="margin:0; padding:14px; border-radius:16px; background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);">
-        <img src="images/my-fan-poster.png" alt="Fan poster concept: Ice Speed" style="width:100%; height:180px; object-fit:cover; border-radius:12px;">
-        <figcaption style="margin-top:10px;">
-          <strong>Caption:</strong> “AI Winter Olympics” poster concept created with ChatGPT and inspired by the Winer Olympics.
+      <figure class="card">
+        <img class="thumb" src="images/my-fan-poster.png" alt="AI Winter Olympics fan poster">
+        <figcaption class="cap">
+          <strong>Caption:</strong> “AI Winter Olympics” poster concept created with ChatGPT and inspired by the Winter Olympics.
           <br>
           <strong>Credit:</strong> Created by <em>Me (Cody Crawford)</em>.
         </figcaption>
       </figure>
 
-<!-- ITEM 2: FAN ART IMAGE -->
-<figure style="margin:0; padding:14px; border-radius:16px; background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);">
-  <img src="images/fan-art-ski.jpg"
-       alt="Skier with Olympic torch illustration"
-       style="width:100%; height:180px; object-fit:cover; border-radius:12px;">
-
-  <figcaption style="margin-top:10px;">
-    <strong>Caption:</strong> Olympic torch skier illustration inspired by Winter Games energy.
-    <br>
-    <strong>Credit:</strong> Illustration by <em>kbeis</em> on
-    <a href="https://www.istockphoto.com/vector/skier-with-olympic-torch-gm187238110-29392214"
-       target="_blank"
-       rel="noopener">iStock</a>.
-  </figcaption>
-</figure>
-
-      <!-- ITEM 3: COSPLAY PHOTO -->
-      <figure style="margin:0; padding:14px; border-radius:16px; background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);">
-
-  <img src="images/cosplay-olympic.jpg"
-       alt="Canadian Olympic fan wearing red mask cheering at hockey game"
-       style="width:100%; height:180px; object-fit:cover; border-radius:12px;">
-
-  <figcaption style="margin-top:10px;">
-    <strong>Caption:</strong>
-    Canadian fan Daniel Bergmann cheers before the women's ice hockey gold medal match
-    at the PyeongChang 2018 Winter Olympics in Gangneung, South Korea.
-
-    <br>
-
-    <strong>Credit:</strong>
-    Photo by Andrew Nelles, USA TODAY Sports.
-  </figcaption>
-
-</figure>
-
-      <!-- ITEM 4: VIDEO EMBED (fan edit / highlights) -->
-      <figure style="margin:0; padding:14px; border-radius:16px; background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);">
-        <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px;">
-          <iframe
-            src="https://www.youtube.com/embed/hw9_uqQo4YU"
-            title="Winter Olympics fan highlight edit"
-            style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <figcaption style="margin-top:10px;">
-          <strong>Caption:</strong> A hype-style highlight video that captures the speed and intensity of Winter Olympics events.
+      <!-- ITEM 2: FAN ART IMAGE -->
+      <figure class="card">
+        <img class="thumb" src="images/fan-art-ski.jpg" alt="Skier with Olympic torch illustration">
+        <figcaption class="cap">
+          <strong>Caption:</strong> Olympic torch skier illustration inspired by Winter Games energy.
           <br>
-          <strong>Credit:</strong> Video by <em>[Channel/Creator Name]</em> on YouTube (linked/embedded with attribution).
+          <strong>Credit:</strong> Illustration by <em>kbeis</em> on
+          <a href="https://www.istockphoto.com/vector/skier-with-olympic-torch-gm187238110-29392214"
+             target="_blank"
+             rel="noopener">iStock</a>.
         </figcaption>
       </figure>
 
-    </div>
+      <!-- ITEM 3: FAN PHOTO -->
+      <figure class="card">
+        <img class="thumb" src="images/cosplay-olympic.jpg" alt="Canadian Olympic fan wearing red mask cheering at a hockey game">
+        <figcaption class="cap">
+          <strong>Caption:</strong> Canadian fan Daniel Bergmann cheers before the women’s ice hockey gold medal match at the
+          PyeongChang 2018 Winter Olympics in Gangneung, South Korea.
+          <br>
+          <strong>Credit:</strong> Photo by Andrew Nelles, USA TODAY Sports.
+        </figcaption>
+      </figure>
 
+      <!-- ITEM 4: VIDEO EMBED -->
+      <figure class="card">
+        <div class="videoWrap">
+          <iframe
+            src="https://www.youtube.com/embed/hw9_uqQo4YU"
+            title="Winter Olympics fan highlight edit"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+        <figcaption class="cap">
+          <strong>Caption:</strong> A hype-style highlight video that captures the speed and intensity of Winter Olympics events.
+          <br>
+          <strong>Credit:</strong> Video by <em>[Channel/Creator Name]</em> on YouTube (embedded with attribution).
+        </figcaption>
+      </figure>
+    </section>
   </main>
 
   <footer>
