@@ -217,3 +217,13 @@ footer{
   nav ul{ gap: 8px; }
   nav a{ padding: 9px 12px; }
 }
+
+/* Make the video tile match the image tile height */
+.videoWrap{
+  height: 180px;          /* same as .thumb */
+  padding-bottom: 0;      /* disable the 16:9 trick */
+}
+
+.videoWrap iframe{
+  height: 100%;
+}
