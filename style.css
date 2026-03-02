@@ -6,224 +6,221 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
 
 :root{
-  --bg: #070b12;
+
+  --bg:#070b12;
   --bg2:#0c1320;
-  --card: rgba(255,255,255,0.06);
-  --text: #eaf2ff;
-  --muted: rgba(234,242,255,0.75);
 
-  --ice: #6ee7ff;
-  --ice2:#7c9cff;
+  --card:rgba(255,255,255,.06);
 
-  --shadow: 0 12px 30px rgba(0,0,0,0.45);
-  --radius: 18px;
+  --text:#eaf2ff;
+  --muted:rgba(234,242,255,.75);
+
+  --ice:#6ee7ff;
+
+  --radius:18px;
+
+  --shadow:0 12px 30px rgba(0,0,0,.45);
+
 }
 
-*{ box-sizing: border-box; }
-html, body { height: 100%; }
+*{
+  box-sizing:border-box;
+}
 
 body{
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: var(--text);
+
+  margin:0;
+
+  font-family:Inter,system-ui;
+
+  color:var(--text);
+
   background:
-    radial-gradient(900px 500px at 10% 0%, rgba(110,231,255,0.25), transparent 60%),
-    radial-gradient(900px 500px at 90% 10%, rgba(124,156,255,0.20), transparent 60%),
-    linear-gradient(180deg, var(--bg), var(--bg2));
+
+    radial-gradient(900px 500px at 10% 0%,rgba(110,231,255,.25),transparent 60%),
+
+    radial-gradient(900px 500px at 90% 10%,rgba(124,156,255,.20),transparent 60%),
+
+    linear-gradient(180deg,var(--bg),var(--bg2));
+
 }
 
-/* Centered layout */
-header, nav, main, footer{
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 18px 18px;
+
+header,nav,main,footer{
+
+  max-width:1100px;
+
+  margin:auto;
+
+  padding:18px;
+
 }
 
-/* Header */
+
 header{
-  margin-top: 18px;
-  border-radius: var(--radius);
-  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-  border: 1px solid rgba(255,255,255,0.10);
-  box-shadow: var(--shadow);
-  position: relative;
-  overflow: hidden;
+
+  border-radius:var(--radius);
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.1);
+
 }
 
-header::after{
-  content:"";
-  position:absolute;
-  inset:-2px;
-  background:
-    radial-gradient(300px 160px at 20% 30%, rgba(110,231,255,0.25), transparent 60%),
-    radial-gradient(260px 140px at 80% 10%, rgba(124,156,255,0.18), transparent 60%);
-  pointer-events:none;
-}
-
-header h1{
-  margin: 0 0 10px 0;
-  font-size: clamp(26px, 3vw, 40px);
-  letter-spacing: -0.5px;
-  font-weight: 800;
-  position: relative;
-  z-index: 1;
-}
 
 header img{
-  width: 100%;
-  max-height: 240px;
-  object-fit: cover;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  filter: saturate(1.05) contrast(1.05);
-  position: relative;
-  z-index: 1;
+
+  width:100%;
+
+  max-height:240px;
+
+  object-fit:cover;
+
+  border-radius:12px;
+
 }
 
-/* NAV */
+
 nav{
-  margin-top: 14px;
-  border-radius: var(--radius);
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.10);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+
+  margin-top:14px;
+
+  border-radius:var(--radius);
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.1);
+
 }
+
 
 nav ul{
-  list-style: none;
-  margin: 0;
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+
+  list-style:none;
+
+  display:flex;
+
+  gap:10px;
+
+  justify-content:center;
+
+  padding:10px;
+
 }
+
 
 nav a{
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 14px;
-  color: var(--text);
-  text-decoration: none;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+
+  color:white;
+
+  text-decoration:none;
+
+  padding:8px 14px;
+
+  border-radius:20px;
+
+  background:rgba(255,255,255,.05);
+
 }
 
-nav a:hover{
-  transform: translateY(-1px);
-  background: rgba(110,231,255,0.14);
-  box-shadow: 0 0 0 6px rgba(110,231,255,0.08);
-}
 
-/* MAIN */
 main{
-  margin-top: 14px;
-  border-radius: var(--radius);
-  background: var(--card);
-  border: 1px solid rgba(255,255,255,0.10);
-  box-shadow: var(--shadow);
+
+  margin-top:14px;
+
+  border-radius:var(--radius);
+
+  background:var(--card);
+
+  border:1px solid rgba(255,255,255,.1);
+
 }
 
-main h2{
-  margin-top: 0;
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.3px;
-  border-bottom: 1px solid rgba(255,255,255,0.10);
-  padding-bottom: 10px;
-}
 
-main p{
-  line-height: 1.65;
-  color: var(--muted);
-  font-size: 16px;
-}
-
-/* Links */
-a{ color: var(--ice); }
-a:hover{ color: #b7f4ff; }
-
-/* Footer */
 footer{
-  margin-top: 14px;
-  margin-bottom: 24px;
-  text-align: center;
-  color: rgba(234,242,255,0.60);
-  font-size: 14px;
+
+  text-align:center;
+
+  margin-top:14px;
+
+  color:rgba(255,255,255,.6);
+
 }
 
-/* =========================
-   Fan Creations Gallery (FIX)
-   ========================= */
+
+/* GALLERY */
 
 .gallery{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 14px;
-  margin-top: 14px;
+
+  display:grid;
+
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+  gap:16px;
+
 }
+
 
 .card{
-  margin: 0;
-  padding: 14px;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.10);
+
+  padding:14px;
+
+  border-radius:16px;
+
+  background:rgba(255,255,255,.05);
+
+  border:1px solid rgba(255,255,255,.1);
+
 }
+
 
 .thumb{
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.30);
+
+  width:100%;
+
+  height:180px;
+
+  object-fit:cover;
+
+  border-radius:12px;
+
+  display:block;
+
 }
+
 
 .cap{
-  margin-top: 10px;
-  color: rgba(234,242,255,0.78);
-  line-height: 1.5;
-  font-size: 14px;
+
+  margin-top:10px;
+
+  font-size:14px;
+
+  color:var(--muted);
+
 }
 
-/* Video wrapper that behaves like the images */
+
+/* VIDEO SAME SIZE AS IMAGE */
+
 .videoWrap{
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.10);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.30);
+
+  width:100%;
+
+  height:180px;
+
+  overflow:hidden;
+
+  border-radius:12px;
+
 }
+
 
 .videoWrap iframe{
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
 
-/* Small screens */
-@media (max-width: 600px){
-  header, nav, main, footer{
-    padding: 14px 14px;
-  }
-  nav ul{ gap: 8px; }
-  nav a{ padding: 9px 12px; }
-}
+  width:100%;
 
-/* Make the video tile match the image tile height */
-.videoWrap{
-  height: 180px;          /* same as .thumb */
-  padding-bottom: 0;      /* disable the 16:9 trick */
-}
+  height:100%;
 
-.videoWrap iframe{
-  height: 100%;
+  border:0;
+
 }
