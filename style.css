@@ -70,9 +70,9 @@ header{
 
 header img{
   width: 100%;
-  height: auto;
-  max-height: 320px;     /* adjust if needed */
-  object-fit: contain;   /* no cropping */
+  height: auto;          
+  max-height: none;      
+  object-fit: contain;   
   border-radius: 12px;
   display: block;
 }
