@@ -61,19 +61,17 @@ header{
   border-radius: var(--radius);
   background: rgba(255,255,255,.05);
   border: 1px solid rgba(255,255,255,.1);
-  overflow: visible;              /* IMPORTANT: do not clip anything */
-  padding-bottom: 12px;
+  overflow: visible !important;   
 }
 
 
 header img{
-  width: 100%;
-  height: auto;
-  max-height: none;
-  object-fit: contain;
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;   
   border-radius: 12px;
   display: block;
-  margin-top: 10px;              /* gives the banner breathing room */
 }
 
 
