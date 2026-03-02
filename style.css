@@ -69,15 +69,12 @@ header{
 
 
 header img{
-
-  width:100%;
-
-  max-height:240px;
-
-  object-fit:cover;
-
-  border-radius:12px;
-
+  width: 100%;
+  height: auto;
+  max-height: 320px;     /* adjust if needed */
+  object-fit: contain;   /* no cropping */
+  border-radius: 12px;
+  display: block;
 }
 
 
