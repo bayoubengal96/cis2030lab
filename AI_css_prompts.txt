@@ -1,0 +1,422 @@
+fan creatrions images are all wonky. help me fix. here is html:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fan Creations – Winter Olympics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Fan Creations</h1>
+    <img src="images/banner.png" alt="Winter Olympics banner">
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="top5.html">Top 5 Countries</a></li>
+      <li><a href="bts.html">Behind the Scenes</a></li>
+      <li><a href="fan-creations.html">Fan Creations</a></li>
+      <li><a href="qa.html">Q&amp;A</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Community Gallery</h2>
+    <p>
+      This page highlights fan-made content inspired by the Winter Olympics. Each item below includes a caption and
+      clear credit to the original creator.
+    </p>
+
+    <!-- SIMPLE GALLERY  -->
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 14px;">
+
+      <!-- ITEM 1: MY FAN POSTER -->
+      <figure style="margin:0; padding:14px; border-radius:16px; background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);">
+        <img src="images/my-fan-poster.png" alt="Fan poster concept: Ice Speed" style="width:100%; height:180px; object-fit:cover; border-radius:12px;">
+        <figcaption style="margin-top:10px;">
+          <strong>Caption:</strong> “AI Winter Olympics” poster concept created with ChatGPT and inspired by the Winer Olympics.
+          <br>
+          <strong>Credit:</strong> Created by <em>Me (Cody Crawford)</em>.
+        </figcaption>
+      </figure>
+
+      <!-- ITEM 2: FAN ART IMAGE -->
+      <figure>
+  <img src="images/fan-art-ski.jpg"
+       alt="Skier with Olympic torch illustration">
+
+  <figcaption>
+    Caption: Olympic torch skier illustration inspired by Winter Games energy.
+    <br>
+    Credit: Illustration by kbeis on
+    <a href="https://www.istockphoto.com/vector/skier-with-olympic-torch-gm187238110-29392214"
+       target="_blank"
+       rel="noopener">
+       iStock
+    </a>.
+  </figcaption>
+</figure>
+
+      <!-- ITEM 3: COSPLAY PHOTO -->
+      <figure style="margin:0; padding:14px; border-radius:16px; background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);">
+
+  <img src="images/cosplay-olympic.jpg"
+       alt="Canadian Olympic fan wearing red mask cheering at hockey game"
+       style="width:100%; height:180px; object-fit:cover; border-radius:12px;">
+
+  <figcaption style="margin-top:10px;">
+    <strong>Caption:</strong>
+    Canadian fan Daniel Bergmann cheers before the women's ice hockey gold medal match
+    at the PyeongChang 2018 Winter Olympics in Gangneung, South Korea.
+
+    <br>
+
+    <strong>Credit:</strong>
+    Photo by Andrew Nelles, USA TODAY Sports.
+  </figcaption>
+
+</figure>
+
+      <!-- ITEM 4: VIDEO EMBED (fan edit / highlights) -->
+      <figure style="margin:0; padding:14px; border-radius:16px; background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);">
+        <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px;">
+          <iframe
+            src="https://www.youtube.com/embed/hw9_uqQo4YU"
+            title="Winter Olympics fan highlight edit"
+            style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <figcaption style="margin-top:10px;">
+          <strong>Caption:</strong> A hype-style highlight video that captures the speed and intensity of Winter Olympics events.
+          <br>
+          <strong>Credit:</strong> Video by <em>[Channel/Creator Name]</em> on YouTube (linked/embedded with attribution).
+        </figcaption>
+      </figure>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Cody Crawford CIS 3020 01I</p>
+  </footer>
+</body>
+</html>
+
+Yep — they’re “wonky” for 2 main reasons:
+
+Item 2’s <figure> doesn’t have the same styling as the others (no padding/card/border).
+
+Item 2’s <img> also has no fixed height + no object-fit, so it expands and blows up the grid.
+
+Let’s fix it cleanly.
+
+Fix option A (fastest): make Item 2 match the others
+
+Replace your ITEM 2 block with this (drop-in replacement):
+
+<!-- ITEM 2: FAN ART IMAGE -->
+<figure style="margin:0; padding:14px; border-radius:16px; background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10);">
+  <img src="images/fan-art-ski.jpg"
+       alt="Skier with Olympic torch illustration"
+       style="width:100%; height:180px; object-fit:cover; border-radius:12px;">
+
+  <figcaption style="margin-top:10px;">
+    <strong>Caption:</strong> Olympic torch skier illustration inspired by Winter Games energy.
+    <br>
+    <strong>Credit:</strong> Illustration by <em>kbeis</em> on
+    <a href="https://www.istockphoto.com/vector/skier-with-olympic-torch-gm187238110-29392214"
+       target="_blank"
+       rel="noopener">iStock</a>.
+  </figcaption>
+</figure>
+
+That alone will stop the grid from stretching.
+
+Fix option B (best practice): remove the inline styles and let CSS handle it
+
+This is the “pro” way and makes everything consistent.
+
+1) Update your HTML gallery to use classes
+
+Replace your gallery <div ...> with this:
+
+<div class="gallery">
+
+Then replace each <figure style="..."> with:
+
+<figure class="card">
+
+And replace each <img style="..."> with:
+
+<img class="thumb" ...>
+
+Example (Item 1 becomes):
+
+<figure class="card">
+  <img class="thumb" src="images/my-fan-poster.png" alt="Fan poster concept: Ice Speed">
+  <figcaption class="cap">
+    <strong>Caption:</strong> “AI Winter Olympics” poster concept created with ChatGPT and inspired by the Winter Olympics.
+    <br>
+    <strong>Credit:</strong> Created by <em>Me (Cody Crawford)</em>.
+  </figcaption>
+</figure>
+
+Do the same pattern for Items 2 and 3.
+
+For the video card, keep your responsive iframe wrapper, but apply the card class:
+
+<figure class="card">
+  <div class="videoWrap">
+    <iframe
+      src="https://www.youtube.com/embed/hw9_uqQo4YU"
+      title="Winter Olympics fan highlight edit"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </div>
+
+  <figcaption class="cap">
+    <strong>Caption:</strong> A hype-style highlight video that captures the speed and intensity of Winter Olympics events.
+    <br>
+    <strong>Credit:</strong> Video by <em>[Channel/Creator Name]</em> on YouTube (linked/embedded with attribution).
+  </figcaption>
+</figure>
+2) Add this to the bottom of your style.css
+/* ===== Fan Creations Gallery ===== */
+
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.card{
+  margin: 0;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.thumb{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.cap{
+  margin-top: 10px;
+  color: rgba(234,242,255,0.78);
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* Keeps the video the same “thumbnail height” feel */
+.videoWrap{
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.videoWrap iframe{
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
+This guarantees every card behaves the same and stays aligned.
+
+One more thing: your nav filename mismatch
+
+Your rubric earlier called it creations.html, but your nav is linking to fan-creations.html:
+
+<li><a href="fan-creations.html">Fan Creations</a></li>
+
+Make sure the filename and nav match. If your file is actually named fan-creations.html, keep it. If you renamed it to creations.html, update the nav everywhere.
+
+
+the css is cutting off my whole top banner image
+Thought for a couple of seconds
+
+That’s happening because your CSS sets the banner image to a max-height with object-fit: cover, which crops the image to fill the space. In your style.css you have:
+
+header img{
+  width:100%;
+  max-height:240px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+cover = “fill the box, even if I have to cut off edges.”
+
+Fix (show the whole banner, no cropping)
+
+Replace your header img{...} rule with this:
+
+header img{
+  width: 100%;
+  height: auto;          /* lets it keep full proportions */
+  max-height: none;      /* no forced cropping height */
+  object-fit: contain;   /* shows the whole image */
+  border-radius: 12px;
+  display: block;
+}
+If the banner becomes “too tall”
+
+Use a gentler limit that still doesn’t crop, like this:
+
+header img{
+  width: 100%;
+  height: auto;
+  max-height: 320px;     /* adjust if needed */
+  object-fit: contain;   /* no cropping */
+  border-radius: 12px;
+  display: block;
+}
+Why your banner looked cut off
+
+Your banner is wide, and the CSS forced it into a short 240px-tall box.
+
+object-fit: cover chopped off the top/bottom to make it fill the box.
+
+If you paste the header img { ... } part of your current style.css, I’ll tell you exactly which lines to replace so you don’t accidentally break anything else.
+
+style.css
+File
+ it' still doing it. css is attached
+Thought for a few seconds
+
+I see what’s going on. Your CSS change is correct, but the banner still looks “cut off” because the image itself already has the top text clipped inside the actual PNG/JPG (it’s baked into the file). In your screenshot, the word “Fan Page” is missing its top portion, which would not be caused by object-fit anymore because you’re using height:auto + contain.
+
+That said, there is one CSS thing that can still “hide” parts of the banner: the header container can clip if anything overlaps and the header is constrained. Easiest fix: remove any chance of clipping and give the banner its own block spacing.
+
+Do this (copy/paste replacement in your CSS)
+
+Replace your current header { ... } block with this:
+
+header{
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  overflow: visible;              /* IMPORTANT: do not clip anything */
+  padding-bottom: 12px;
+}
+
+And update your header img to include a little spacing:
+
+header img{
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+  margin-top: 10px;              /* gives the banner breathing room */
+}
+Why this helps
+
+If anything (like shadows, rounding, or a weird browser paint issue) is clipping, overflow: visible guarantees the image won’t be cropped by the header container.
+
+If it’s STILL clipped after that…
+
+Then it’s 99% the banner file itself.
+
+Quick proof test:
+
+Open images/banner.png directly in the browser (just click it in your file explorer).
+
+If it already looks clipped there, then the PNG is clipped.
+
+Easy workaround (if the banner image is clipped)
+
+You can “fake extra headroom” by adding padding behind the image:
+
+header img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  padding-top: 18px;             /* pushes the visible content down */
+  background: transparent;
+}
+
+That won’t recover pixels that don’t exist, but it can hide the fact that the top is tight by shifting the image down visually.
+
+Fastest solution if you want it perfect
+
+Upload your banner.png here and I’ll:
+
+add safe top padding inside the image,
+
+export a corrected version that won’t look clipped anywhere.
+
+If you don’t want to upload it, tell me the banner’s pixel size (like 1200x300) and I’ll tell you the exact CSS to make it look best.
+
+Thought for 26s
+
+Thanks — your banner.png is fine (it’s not pre-cropped). The reason it’s still getting clipped on the page is almost certainly an older CSS rule still being applied (cache) or another rule overriding header img.
+
+Let’s fix it in a “can’t be overridden” way.
+
+1) Replace your header img { ... } rule with this (use exactly this)
+
+In your current style.css you already have a header img block.
+Replace that entire block with:
+
+header img{
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;   /* show whole image, no cropping */
+  border-radius: 12px;
+  display: block;
+}
+2) Add this to your header { ... } rule to stop any container clipping
+
+Right now your header has no overflow, but adding this prevents any accidental clipping from rounding/shadows/etc.
+
+header{
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  overflow: visible !important;   /* do not clip banner */
+}
+
+(Just add the overflow line, or paste the full block above.)
+
+3) Hard refresh (this is the part most people miss)
+
+After saving + pushing to GitHub Pages:
+
+Windows/Chrome: CTRL + F5
+
+Or open in Incognito
+
+Or cache-bust CSS by temporarily changing your HTML link to:
+
+<link rel="stylesheet" href="style.css?v=2">
+
+(That forces the browser to load the newest CSS.)
+
+Why I’m confident it’s cache/override
+
+Your current CSS already says object-fit: contain; height:auto; max-height:none;
+So if you still see cropping, you’re not actually viewing that CSS rule in effect yet.
+
+If you want the fastest confirmation: open DevTools → Elements → click the banner <img> → look at Computed styles for object-fit. If it says cover, you’re still on old CSS.
