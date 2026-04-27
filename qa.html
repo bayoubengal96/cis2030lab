@@ -98,7 +98,22 @@ There are several active online communities where fans discuss Winter Olympic sp
   </li>
 
 </ul>
+<h3>Suggest a Future Q&amp;A Question</h3>
 
+<p>
+  Have a Winter Olympics question you think should be added later? Type it below.
+</p>
+
+<form id="suggestionForm">
+  <label for="suggestionInput">Your question:</label>
+  <input type="text" id="suggestionInput" placeholder="Type your question here" required>
+
+  <button type="submit">Submit Suggestion</button>
+</form>
+
+<p id="suggestionMessage"></p>
+
+<ul id="suggestionList"></ul>
   </main>
 
   <footer>
@@ -112,11 +127,38 @@ There are several active online communities where fans discuss Winter Olympic sp
       const answer = question.nextElementSibling;
 
       if (answer.style.display === "block") {
-        answer.style.display = "none";
+        answer.style.display = "";
       } else {
         answer.style.display = "block";
       }
     });
+  });
+
+  const form = document.querySelector("#suggestionForm");
+  const input = document.querySelector("#suggestionInput");
+  const message = document.querySelector("#suggestionMessage");
+  const list = document.querySelector("#suggestionList");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    if (input.value.trim() === "") {
+      message.textContent = "Please type a question before submitting.";
+      return;
+    }
+
+    const newItem = document.createElement("li");
+    newItem.textContent = input.value;
+
+    list.appendChild(newItem);
+
+    message.textContent = "Thanks! Your question was added to the future Q&A suggestion list.";
+    input.value = "";
+  });
+
+  // FIXED: this must be OUTSIDE the submit function
+  input.addEventListener("input", function() {
+    message.textContent = "";
   });
 </script>
 </body>

@@ -250,3 +250,33 @@ footer{
   border-left: 3px solid var(--ice);
   color: var(--muted);
 }
+#suggestionForm {
+  margin-top: 12px;
+}
+
+#suggestionInput {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.2);
+}
+
+#suggestionForm button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(110,231,255,.18);
+  color: white;
+  cursor: pointer;
+}
+
+#suggestionMessage {
+  color: var(--ice);
+  font-weight: 600;
+}
+
+#suggestionList {
+  color: var(--muted);
+}
