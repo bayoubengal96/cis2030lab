@@ -218,3 +218,35 @@ footer{
   border:0;
 
 }
+
+/* Q&A JavaScript section */
+
+.qa-box {
+  margin-top: 20px;
+}
+
+.question {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 12px;
+  background: rgba(255,255,255,.08);
+  color: white;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.question:hover {
+  background: rgba(110,231,255,.18);
+}
+
+.answer {
+  display: none;
+  padding: 12px;
+  margin-top: 6px;
+  border-left: 3px solid var(--ice);
+  color: var(--muted);
+}

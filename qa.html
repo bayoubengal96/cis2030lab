@@ -29,25 +29,26 @@
       This page is a quick Q&amp;A about how I connect with the Winter Olympics as a fan.
     </p>
 
-    <h3>How did you become a fan?</h3>
-    <p>
-      I became a fan from watching the Winter Olympics on TV and seeing how intense the sports are. Events like hockey,
-      skiing, and speed skating are fast and high-skill, and it’s fun to see the big moments and underdog wins.
-    </p>
+ <section class="qa-box">
+  <button class="question">How did you become a fan?</button>
+  <p class="answer">
+    I became a fan from watching the Winter Olympics on TV and seeing how intense the sports are. Events like hockey,
+    skiing, and speed skating are fast and high-skill, and it’s fun to see the big moments and underdog wins.
+  </p>
 
-    <h3>What do you love most about it?</h3>
-    <p>
-      I love the variety. One minute it’s a precision sport like figure skating, and the next it’s pure speed like luge
-      or downhill skiing. Also, the atmosphere feels different than most sports because it’s country vs. country and
-      it feels like everyone is representing something bigger than just a team.
-    </p>
+  <button class="question">What do you love most about it?</button>
+  <p class="answer">
+    I love the variety. One minute it’s a precision sport like figure skating, and the next it’s pure speed like luge
+    or downhill skiing. Also, the atmosphere feels different than most sports because it’s country vs. country and
+    it feels like everyone is representing something bigger than just a team.
+  </p>
 
-    <h3>What would you recommend to someone just getting started?</h3>
-    <p>
-      I would recommend starting with a few easy-to-follow sports: ice hockey, snowboarding, figure skating, and alpine
-      skiing. Watch a short highlight video first, then watch a full event so you understand how scoring works. Once you
-      learn the rules, it becomes way more exciting.
-    </p>
+  <button class="question">What would you recommend to someone just getting started?</button>
+  <p class="answer">
+    I would recommend starting with a few easy-to-follow sports: ice hockey, snowboarding, figure skating, and alpine
+    skiing. Watch a short highlight video first, then watch a full event so you understand how scoring works.
+  </p>
+</section>
 
 <h3>Do you have any favorite fan communities or creators?</h3>
 
@@ -103,5 +104,20 @@ There are several active online communities where fans discuss Winter Olympic sp
   <footer>
     <p>&copy; 2026 Cody Crawford CIS 3020 01I</p>
   </footer>
+<script>
+  const questions = document.querySelectorAll(".question");
+
+  questions.forEach(function(question) {
+    question.addEventListener("click", function() {
+      const answer = question.nextElementSibling;
+
+      if (answer.style.display === "block") {
+        answer.style.display = "none";
+      } else {
+        answer.style.display = "block";
+      }
+    });
+  });
+</script>
 </body>
 </html>
